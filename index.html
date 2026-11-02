@@ -3,53 +3,69 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Lesan Kiptoo — Computer Technologist</title>
+<title>Lesan Kiptoo — Computer Technologist | Portfolio</title>
+<meta name="description" content="Lesan Kiptoo - BSc Computer Technology, Maseno University. Branch Supervisor, Cloud Security, Go & Python Developer from Nairobi, Kenya">
 <style>
-:root{--bg:#0a0a0b;--card:#111113;--border:#222;--text:#e8e8e8;--muted:#9a9a9a;--accent:#00ff88;--accent2:#00d4ff}
+:root{
+  --bg:#0a0a0b;--card:#111113;--border:#222;--text:#e8e8e8;--muted:#9a9a9a;
+  --accent:#00ff88;--accent2:#00d4ff;--btn:#1a1a1a;--live-bg:linear-gradient(135deg,#00ff8810,#00d4ff10);--live-border:#00ff8830
+}
+[data-theme="light"]{
+  --bg:#f8f9fb;--card:#ffffff;--border:#e5e7eb;--text:#0f172a;--muted:#64748b;
+  --btn:#ffffff;--live-bg:linear-gradient(135deg,#00ff8815,#00d4ff15);--live-border:#00ff8860
+}
 *{margin:0;padding:0;box-sizing:border-box}
-body{background:var(--bg);color:var(--text);font-family:Inter,system-ui,sans-serif;line-height:1.6}
+body{background:var(--bg);color:var(--text);font-family:Inter,system-ui,sans-serif;line-height:1.6;transition:.3s}
 a{color:var(--accent);text-decoration:none}
 .container{max-width:900px;margin:0 auto;padding:24px}
-header{padding:80px 0 40px;border-bottom:1px solid var(--border)}
-.badge{display:inline-block;background:#00ff8815;border:1px solid #00ff8840;color:var(--accent);padding:4px 12px;border-radius:999px;font-size:12px;margin-bottom:16px}
-h1{font-size:48px;font-weight:800;line-height:.95;letter-spacing:-1.5px}
+.topbar{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px}
+.theme-btn{background:var(--card);border:1px solid var(--border);color:var(--text);padding:8px 14px;border-radius:999px;font-size:13px;cursor:pointer}
+header{padding:40px 0 32px;border-bottom:1px solid var(--border)}
+.badge{display:inline-block;background:#00ff8815;border:1px solid #00ff8840;color:#00ff88;padding:4px 12px;border-radius:999px;font-size:12px;margin-bottom:16px}
+h1{font-size:52px;font-weight:800;line-height:.9;letter-spacing:-1.5px}
 h1 span{background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-.subtitle{color:var(--muted);margin-top:12px;font-size:18px;max-width:600px}
-.links{margin-top:20px;display:flex;gap:12px;flex-wrap:wrap}
-.btn{padding:10px 18px;border-radius:10px;border:1px solid var(--border);background:var(--card);color:var(--text);font-size:14px}
-.btn-primary{background:var(--text);color:var(--bg);font-weight:600}
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:32px}
-@media(max-width:700px){.grid{grid-template-columns:1fr}h1{font-size:36px}}
-.card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:20px}
-.card h3{font-size:13px;text-transform:uppercase;letter-spacing:1px;color:var(--muted);margin-bottom:12px}
-.card h2{font-size:18px;margin-bottom:8px}
-.meta{font-size:13px;color:var(--muted)}
+.subtitle{color:var(--muted);margin-top:14px;font-size:18px;max-width:650px}
+.links{margin-top:22px;display:flex;gap:10px;flex-wrap:wrap}
+.btn{padding:11px 18px;border-radius:10px;border:1px solid var(--border);background:var(--btn);color:var(--text);font-size:14px;cursor:pointer;display:inline-flex;align-items:center;gap:6px}
+.btn-primary{background:var(--text);color:var(--bg);font-weight:700;border-color:var(--text)}
+.btn-accent{background:var(--accent);color:#000;font-weight:700;border-color:var(--accent)}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:28px}
+@media(max-width:700px){.grid{grid-template-columns:1fr}h1{font-size:38px}}
+.card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:20px;transition:.3s}
+.card h3{font-size:12px;text-transform:uppercase;letter-spacing:1px;color:var(--muted);margin-bottom:12px}
+.card h2{font-size:17px;margin-bottom:6px}
+.meta{font-size:13px;color:var(--muted);margin-bottom:8px}
 ul{list-style:none}
-ul li{padding:6px 0;border-bottom:1px dashed #222;font-size:14px}
+ul li{padding:7px 0;border-bottom:1px dashed var(--border);font-size:14px}
 ul li:last-child{border:none}
-.tag{display:inline-block;background:#1a1a1a;border:1px solid #2a2a2a;padding:4px 10px;border-radius:999px;font-size:12px;margin:3px}
-.live{margin-top:32px;background:linear-gradient(135deg,#00ff8810,#00d4ff10);border:1px solid #00ff8830;border-radius:16px;padding:16px;font-family:monospace;font-size:13px}
-footer{margin-top:64px;padding:32px 0;border-top:1px solid var(--border);color:var(--muted);font-size:13px;text-align:center}
+.tag{display:inline-block;background:var(--bg);border:1px solid var(--border);padding:5px 11px;border-radius:999px;font-size:12px;margin:3px}
+.live{margin-top:28px;background:var(--live-bg);border:1px solid var(--live-border);border-radius:16px;padding:18px;font-family:ui-monospace,monospace;font-size:13px;word-break:break-all}
+footer{margin-top:56px;padding:28px 0;border-top:1px solid var(--border);color:var(--muted);font-size:13px;text-align:center}
 </style>
 </head>
 <body>
 <div class="container">
-<header>
+<div class="topbar">
 <div class="badge">● LIVE FROM NAIROBI — GO 1.26.4 / AARCH64</div>
+<button class="theme-btn" id="themeToggle" onclick="toggleTheme()">🌙 Dark</button>
+</div>
+
+<header>
 <h1>Lesan <span>Kiptoo</span></h1>
-<p class="subtitle">Computer Technologist (Maseno University) • Branch Supervisor at Urban Waters • ICT & Cloud Security — organized, detail-oriented, building reliable systems from Nairobi.</p>
+<p class="subtitle">Computer Technologist (Maseno University) • Branch Supervisor at Urban Waters, Kilimani • ICT & Cloud Security • Organized, detail-oriented, building reliable systems from Nairobi.</p>
 <div class="links">
-<a class="btn btn-primary" href="mailto:lesankiptoo@gmail.com">lesankiptoo@gmail.com</a>
-<a class="btn" href="https://lesankiptoo.github.io/" target="_blank">Portfolio</a>
-<a class="btn" href="https://github.com/lesan24" target="_blank">GitHub: lesan24</a>
-<a class="btn" href="/api">View /api JSON ↗</a>
+<a class="btn btn-accent" href="./Lesan-Kiptoo-CV.pdf" download>📄 Download CV</a>
+<a class="btn btn-primary" id="emailBtn" href="mailto:lesankiptoo@gmail.com?subject=Opportunity%20for%20Lesan%20Kiptoo&body=Hi%20Lesan%2C%0A%0AI%20saw%20your%20portfolio%20at%20https%3A%2F%2Flesan24.github.io%2Fmy-first-folder%2F">✉️ Email Me</a>
+<a class="btn" href="https://lesankiptoo.github.io/" target="_blank">🌐 Old Portfolio</a>
+<a class="btn" href="https://github.com/lesan24" target="_blank">💻 GitHub</a>
+<a class="btn" href="/api">View /api ↗</a>
 </div>
 </header>
 
 <div class="grid">
 <div class="card">
 <h3>Professional Profile</h3>
-<p style="font-size:14px;color:#ccc">Organized and detail-oriented professional with BSc Computer Technology from Maseno University. Currently Branch Supervisor managing sales, stock, customer accounts, debt follow-ups and performance reporting. Proficient in Word/Excel, troubleshooting, and fast learner of accounting & admin systems.</p>
+<p style="font-size:14px;color:var(--muted)">Organized and detail-oriented professional with BSc Computer Technology from Maseno University. Currently Branch Supervisor managing sales, stock, customer accounts, debt follow-ups and performance reporting. Proficient in Word/Excel, troubleshooting, and fast learner of accounting & admin systems. Now shipping full-stack apps with Go 1.26.4 from Termux on aarch64.</p>
 </div>
 <div class="card">
 <h3>Contact</h3>
@@ -58,7 +74,7 @@ footer{margin-top:64px;padding:32px 0;border-top:1px solid var(--border);color:v
 <li>📞 0727 919 676</li>
 <li>✉️ lesankiptoo@gmail.com</li>
 <li>🔗 lesankiptoo.github.io</li>
-<li>💻 Running on Termux Go 1.26.4 / aarch64</li>
+<li>💻 Go 1.26.4 / Python / Termux aarch64</li>
 </ul>
 </div>
 </div>
@@ -72,6 +88,7 @@ footer{margin-top:64px;padding:32px 0;border-top:1px solid var(--border);color:v
 <li>Maintain daily sales, stock & operational records</li>
 <li>Prepare weekly/monthly performance reports</li>
 <li>Monitor accounts, track debts & follow up payments</li>
+<li>Record stock received, sales, transfers, inventory</li>
 <li>Coordinate operations & customer service</li>
 </ul>
 <br>
@@ -92,7 +109,7 @@ footer{margin-top:64px;padding:32px 0;border-top:1px solid var(--border);color:v
 <h2>Litein High School</h2>
 <div class="meta">KCSE • Feb 2015 – Dec 2018</div>
 <br>
-<h3 style="margin-top:20px">Training</h3>
+<h3 style="margin-top:20px">Training & Development</h3>
 <ul>
 <li>🛡️ Cyber Shujaa — Cloud and Network Security (2025)</li>
 <li>🛡️ Cyber Shujaa — Penetration Testing & Ethical Hacking (2025)</li>
@@ -104,7 +121,7 @@ footer{margin-top:64px;padding:32px 0;border-top:1px solid var(--border);color:v
 
 <div class="card" style="margin-top:16px">
 <h3>Key Skills</h3>
-<div style="margin-top:8px">
+<div style="margin-top:10px">
 <span class="tag">Data Entry & Record Keeping</span>
 <span class="tag">Report Preparation</span>
 <span class="tag">Stock & Inventory Tracking</span>
@@ -123,19 +140,42 @@ footer{margin-top:64px;padding:32px 0;border-top:1px solid var(--border);color:v
 </div>
 </div>
 
-<div class="live" id="api-box">Loading live data from /api ...</div>
+<div class="live" id="api-box">● Loading live data from /api ... (run go run main.go)</div>
 
 <footer>
-Built with ❤️ in Nairobi by Lesan Kiptoo • Go backend on localhost:8080 • Deploying via GitHub Pages • <span id="year"></span>
+Built with ❤️ in Nairobi by Lesan Kiptoo • Go backend on localhost:8080 • Deploying via GitHub Pages • <span id="year"></span> • <a href="./Lesan-Kiptoo-CV.pdf" download>Download CV PDF</a>
 </footer>
 </div>
 
 <script>
+const btn = document.getElementById('themeToggle');
+function setTheme(t){
+ document.documentElement.setAttribute('data-theme',t);
+ localStorage.setItem('theme',t);
+ btn.textContent = t==='light' ? '☀️ Light' : '🌙 Dark';
+}
+function toggleTheme(){
+ const cur = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light':'dark');
+ setTheme(cur==='light'?'dark':'light');
+}
+(function(){
+ const saved = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light':'dark');
+ setTheme(saved);
+})();
+
 document.getElementById('year').textContent = new Date().getFullYear();
+
+// Smart email: open Gmail in browser if possible, else mailto
+document.getElementById('emailBtn').addEventListener('click', function(e){
+ // let mailto work, but also open Gmail compose in new tab for Brave users
+ const gmailUrl = "https://mail.google.com/mail/?view=cm&fs=1&to=lesankiptoo@gmail.com&su=Opportunity%20for%20Lesan%20Kiptoo&body=Hi%20Lesan%2C%0A%0AI%20saw%20your%20portfolio%20at%20https%3A%2F%2Flesan24.github.io%2Fmy-first-folder%2F";
+ window.open(gmailUrl, '_blank');
+});
+
 fetch('/api').then(r=>r.json()).then(d=>{
- document.getElementById('api-box').innerHTML = '<b>● LIVE API</b> — ' + d.server + ' | Stack: ' + d.stack.join(', ') + '<br><pre style="margin-top:10px;white-space:pre-wrap">'+JSON.stringify(d,null,2)+'</pre>';
+ document.getElementById('api-box').innerHTML = '<b>● LIVE API</b> — '+ (d.server||'') + ' | Stack: ' + (d.stack||[]).join(', ') + '<br><pre style="margin-top:12px;white-space:pre-wrap">'+JSON.stringify(d,null,2)+'</pre>';
 }).catch(()=>{
- document.getElementById('api-box').innerHTML = '● API offline (run <code>go run main.go</code> in Termux to see live JSON). But site is live on <a href="https://lesan24.github.io/my-first-folder/">GitHub Pages</a>';
+ document.getElementById('api-box').innerHTML = '● API offline — run <code>go run main.go</code> in Termux. Live site: <a href="https://lesan24.github.io/my-first-folder/">lesan24.github.io/my-first-folder/</a>';
 });
 </script>
 </body>
