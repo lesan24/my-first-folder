@@ -173,9 +173,39 @@ document.getElementById('emailBtn').addEventListener('click', function(e){
 });
 
 fetch('/api').then(r=>r.json()).then(d=>{
- document.getElementById('api-box').innerHTML = '<b>● LIVE API</b> — '+ (d.server||'') + ' | Stack: ' + (d.stack||[]).join(', ') + '<br><pre style="margin-top:12px;white-space:pre-wrap">'+JSON.stringify(d,null,2)+'</pre>';
+ fetch('https://lesan-api.onrender.com/api')
+  .then(r => r.json())
+  .then(data => {
+    document.getElementById('api-box').innerHTML = '✅ API LIVE — ' + data.name + ' | ' + data.title;
+  })
+  .catch(() => {
+    document.getElementById('api-box').innerHTML = '● API offline — run <code>go run main.go</code> in Termux. Live site: <a href="https://lesan24.github.io/my-first-folder/">lesan24.github.io/my-first-folder/</a>';
+  });
+  // OLD CODE BELOW - document.getElementById('api-box').innerHTML = '<b>● LIVE API</b> — '+ (d.server||'') + ' | Stack: ' + (d.stack||[]).join(', ') + '<br><pre style="margin-top:12px;white-space:pre-wrap">'+JSON.stringify(d,null,2)+'</pre>';
 }).catch(()=>{
  document.getElementById('api-box').innerHTML = '● API offline — run <code>go run main.go</code> in Termux. Live site: <a href="https://lesan24.github.io/my-first-folder/">lesan24.github.io/my-first-folder/</a>';
+});
+</script>
+<!-- GMAIL CONTACT FORM -->
+<section id="contact" style="padding:40px 20px;max-width:700px;margin:60px auto 0;background:#111;border-radius:16px;border:1px solid #222">
+<h2 style="color:#00ff88;margin:0 0 20px">📧 Contact Me</h2>
+<form id="contactForm" style="display:flex;flex-direction:column;gap:14px">
+<input id="cName" placeholder="Your Name" required style="padding:14px;border-radius:10px;border:1px solid #333;background:#0a0a0a;color:#fff">
+<input id="cEmail" placeholder="Your Email" type="email" required style="padding:14px;border-radius:10px;border:1px solid #333;background:#0a0a0a;color:#fff">
+<textarea id="cMsg" placeholder="Your Message..." required style="padding:14px;border-radius:10px;border:1px solid #333;background:#0a0a0a;color:#fff;height:120px"></textarea>
+<button type="submit" style="padding:14px;background:linear-gradient(90deg,#00ff88,#00aaff);border:none;border-radius:10px;font-weight:900;cursor:pointer;font-size:16px">✉️ Send via Gmail</button>
+</form>
+<p style="color:#666;font-size:12px;margin-top:12px;text-align:center">Opens Gmail compose to lesankiptoo24@gmail.com — no server needed</p>
+</section>
+<script>
+document.getElementById('contactForm').addEventListener('submit', function(e){
+ e.preventDefault();
+ const name=document.getElementById('cName').value;
+ const email=document.getElementById('cEmail').value;
+ const msg=document.getElementById('cMsg').value;
+ const subject=encodeURIComponent("Portfolio Inquiry from "+name);
+ const body=encodeURIComponent(msg+"\n\nFrom: "+name+" ("+email+")");
+ window.open(`https://mail.google.com/mail/?view=cm&fs=1&to=lesankiptoo24@gmail.com&su=${subject}&body=${body}`,'_blank');
 });
 </script>
 </body>
