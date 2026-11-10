@@ -140,7 +140,7 @@ footer{margin-top:56px;padding:28px 0;border-top:1px solid var(--border);color:v
 </div>
 </div>
 
-<div class="live" id="api-box">● Loading live data from /api ... (run go run main.go)</div>
+<div class="live" id="api-box">● Loading live data from Render...</div>
 
 <footer>
 Built with ❤️ in Nairobi by Lesan Kiptoo • Go backend on lesan-kiptoo.onrender.com • Deploying via GitHub Pages • <span id="year"></span> • <a href="./Lesan-Kiptoo-CV.pdf" download>Download CV PDF</a>
@@ -173,7 +173,7 @@ document.getElementById('emailBtn').addEventListener('click', function(e){
 });
 
 fetch('/api').then(r=>r.json()).then(d=>{
- fetch('https://lesan-api.onrender.com/api')
+ fetch('https://lesan-kiptoo.onrender.com/api')
   .then(r => r.json())
   .then(data => {
     document.getElementById('api-box').innerHTML = '✅ API LIVE — ' + data.name + ' | ' + data.title;
