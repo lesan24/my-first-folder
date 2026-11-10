@@ -31,7 +31,7 @@ func main(){
   http.Handle("/",fs)
   http.HandleFunc("/api",apiHandler)
   http.HandleFunc("/api/cv",cvHandler)
-  fmt.Println("🚀 LIVE: http://localhost:8080")
+  fmt.Println("🚀 LIVE: https://lesan-kiptoo.onrender.com")
   fmt.Println("   /api -> portfolio JSON")
   fmt.Println("   /api/cv -> CV JSON")
   http.ListenAndServe(":8080",nil)
